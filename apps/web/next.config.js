@@ -1,7 +1,10 @@
 if (!process.env.NEXT_REWRITE_DOCS_URL) {
-  throw new Error('NEXT_REWRITE_DOCS_URL environment variable is not defined');
+  throw new Error("NEXT_REWRITE_DOCS_URL environment variable is not defined");
 }
-console.info('process.env.NEXT_REWRITE_DOCS_URL', process.env.NEXT_REWRITE_DOCS_URL);
+console.info(
+  "process.env.NEXT_REWRITE_DOCS_URL",
+  process.env.NEXT_REWRITE_DOCS_URL
+);
 
 module.exports = {
   reactStrictMode: true,
@@ -9,8 +12,8 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/docs/:path*',
-        destination: `${process.env.NEXT_REWRITE_DOCS_URL}/:path*`,
+        source: "/docs/:path*",
+        destination: `${process.env.NEXT_REWRITE_DOCS_URL}/docs/:path*`,
       },
     ];
   },
