@@ -12,6 +12,10 @@ module.exports = {
   async rewrites() {
     return [
       {
+        source: "/docs",
+        destination: `${process.env.NEXT_REWRITE_DOCS_URL}/docs`,
+      },
+      {
         source: "/docs/:path*",
         destination: `${process.env.NEXT_REWRITE_DOCS_URL}/docs/:path*`,
       },
